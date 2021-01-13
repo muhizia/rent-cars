@@ -8,7 +8,6 @@
 #ifndef Customer_hpp
 #define Customer_hpp
 
-#include <stdio.h>
 #include <string>
 #include <iostream>
 #include "car.hpp"

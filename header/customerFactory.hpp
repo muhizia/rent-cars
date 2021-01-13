@@ -8,7 +8,6 @@
 #ifndef customerFactory_hpp
 #define customerFactory_hpp
 
-#include <stdio.h>
 #include "customer.hpp"
 
 class customerFactory

@@ -5,7 +5,6 @@
 //  Created by Muhizi Aristide on 08/01/2021.
 //
 
-#include <stdio.h>
 #include "header/member.hpp"
 #include <iostream>
 #include <fstream>

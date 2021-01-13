@@ -9,7 +9,6 @@
 #define Guest_hpp
 
 
-#include <stdio.h>
 #include <string>
 #include "customer.hpp"
 

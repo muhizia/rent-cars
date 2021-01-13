@@ -8,7 +8,6 @@
 #ifndef Member_h
 #define Member_h
 
-#include <stdio.h>
 #include "customer.hpp"
 
 class member: public customer
