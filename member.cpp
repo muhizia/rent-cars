@@ -39,7 +39,6 @@ void member::login(customer &user, const std::string *username, const std::strin
         std::stringstream iss(line);
         std::vector<std::string> results((std::istream_iterator<std::string>(iss)),
                                          std::istream_iterator<std::string>());
-        std::cout<<results.at(1)<< " " <<results.at(2)<<" " << results.at(0)<<std::endl;
         if(results.at(3)==*username && results.at(4)==*password)
         {
             to_int << results.at(0);
@@ -55,13 +54,18 @@ bool member::logout()
 {
     return false;
 }
-bool member::editProfile()
+void member::editProfile(customer &cstm, std::string &fn, std::string &ln, std::string &dob)
 {
-    return false;
+    cstm.setLastName(ln);
+    cstm.setFirstName(fn);
+    cstm.setDof(dob);
+//    cstm
 }
-void member::viewProfile()
+void member::viewProfile(customer &cg)
 {
-    
+    std::cout<<"Firstname: " << cg.getFirstName() <<std::endl;
+    std::cout<<"Lastname: " << cg.getLastName() <<std::endl;
+    std::cout<<"Lastname: " << cg.getDof() <<std::endl;
 }
 bool member::signUp(std::string *username, std::string *password, std::string *fname, std::string *lname, std::string *dof)
 {

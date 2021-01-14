@@ -31,12 +31,7 @@ car car::getCar(const std::vector<car> &c, const std::string &pN)
     }
     if(it == c.end())
     {
-        crV.push_back(NULL);
-        crV.push_back(NULL);
-        crV.push_back(NULL);
-        crV.push_back(NULL);
-        crV.push_back(NULL);
-        crV.push_back(NULL);
+        crV = {};
     }
     car cr(crV);
     return cr;

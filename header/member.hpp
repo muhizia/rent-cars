@@ -23,8 +23,8 @@ public:
     bool signUp(std::string *, std::string *, std::string *, std::string *, std::string *);
     bool isExists(std::string *);
     bool logout();
-    bool editProfile();
-    void viewProfile();
+    void editProfile(customer &, std::string &, std::string &, std::string &);
+    void viewProfile(customer &);
     std::vector<car>* getRentedCars();
     void getRentedCars(std::vector<car> &, int);
     void rentCar(car c);

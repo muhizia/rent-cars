@@ -36,8 +36,8 @@ public:
     virtual bool signUp(std::string *username, std::string *password, std::string *fname, std::string *lname, std::string *dof){return false;}
     virtual bool isExists(std::string *username){return false;}
     virtual bool logout(){return false;}
-    virtual bool editProfile(){return false;}
-    virtual void viewProfile(){}
+    virtual void editProfile(customer &cstm, std::string &fn, std::string &ln, std::string &dob){}
+    virtual void viewProfile(customer &){}
     
     virtual std::vector<car>* getRentedCars();
     virtual void getRentedCars(std::vector<car> &, int);
