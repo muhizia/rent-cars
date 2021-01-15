@@ -12,8 +12,9 @@
 #include <iostream>
 #include "car.hpp"
 
-const std::string FNAME = "default";
-const std::string LNAME = "default";
+const std::string FNAME = "_default";
+const std::string LNAME = "_default";
+const std::string DOF = "_default";
 const int ID    = 10000;
 
 class customer
@@ -29,11 +30,12 @@ public:
     customer(std::string f, std::string l, int id): firstName(f), lastName(l), customer_id(id){};
     virtual ~customer();
     
-    virtual void login(customer &user, const std::string *username, const std::string *password)
+    virtual bool login(customer &user, const std::string *username, const std::string *password)
     {
         std::cout<< "hello--------------------------\n";
+        return false;
     }
-    virtual bool signUp(std::string *username, std::string *password, std::string *fname, std::string *lname, std::string *dof){return false;}
+    virtual bool signUp(customer &user, std::string *username, std::string *password, std::string *fname, std::string *lname, std::string *dof){return false;}
     virtual bool isExists(std::string *username){return false;}
     virtual bool logout(){return false;}
     virtual void editProfile(customer &cstm, std::string &fn, std::string &ln, std::string &dob){}

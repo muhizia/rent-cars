@@ -11,7 +11,7 @@
 #include <string>
 #include <vector>
 
-const std::string _default = "default";
+const std::string _default = "_default";
 const double _dp = 0;
 class car
 {
@@ -38,10 +38,15 @@ public:
     void viewCars(std::vector<car> &);
     /* admin side **/
     void deleteCar(const car & c);
+    void deleteCar(const std::string & pN);
     void registerCar(const car & c);
+    void registerCar(std::string _carMake,
+                     std::string _carType,
+                     std::string _carModel,
+                     std::string _carColour,
+                     std::string _carPlateNo,
+                     double _carPrice);
     void editcar(const car & c);
-    
-    
     std::string toString();
 };
 

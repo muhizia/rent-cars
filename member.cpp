@@ -25,12 +25,15 @@ void member::rentCar(car c)
 {
     customer::rentCar(c);
 }
-void member::login(customer &user, const std::string *username, const std::string *password)
+bool member::login(customer &user, const std::string *username, const std::string *password)
 {
     int id;
     std::string line;
     std::ifstream fin;
     std::stringstream to_int;
+    bool returnvalue = false;
+    if(username->length()<=0 || password->length()<=0)
+        return returnvalue;
     fin.open("users.txt");
     //check if user exists.
     while (fin) {
@@ -45,10 +48,12 @@ void member::login(customer &user, const std::string *username, const std::strin
             to_int >> id;
             member m(results.at(1), results.at(2), id);
             user = m;
+            returnvalue = true;
             break;
         }
     }
     fin.close();
+    return returnvalue;
 }
 bool member::logout()
 {
@@ -67,7 +72,7 @@ void member::viewProfile(customer &cg)
     std::cout<<"Lastname: " << cg.getLastName() <<std::endl;
     std::cout<<"Lastname: " << cg.getDof() <<std::endl;
 }
-bool member::signUp(std::string *username, std::string *password, std::string *fname, std::string *lname, std::string *dof)
+bool member::signUp(customer &user, std::string *username, std::string *password, std::string *fname, std::string *lname, std::string *dof)
 {
     if(isExists(username))
     {

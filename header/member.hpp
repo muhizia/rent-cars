@@ -19,8 +19,8 @@ public:
 //    void viewCar();
 //    void searchCar();
 //    void rentCar();
-    void login(customer &user, const std::string *, const std::string *);
-    bool signUp(std::string *, std::string *, std::string *, std::string *, std::string *);
+    bool login(customer &user, const std::string *, const std::string *);
+    bool signUp(customer &user, std::string *, std::string *, std::string *, std::string *, std::string *);
     bool isExists(std::string *);
     bool logout();
     void editProfile(customer &, std::string &, std::string &, std::string &);

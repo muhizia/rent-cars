@@ -15,7 +15,7 @@
 #include <unistd.h>
 
 
-void login(customer *cstm)
+void login(customer *cstm, bool &sessionOn)
 {
     
     
@@ -26,9 +26,9 @@ void login(customer *cstm)
     std::cin>>username;
     std::cout << "Password: >>";
     std::cin>>password;
-    cstm->login(*cstm, &username, &password);
+    sessionOn = cstm->login(*cstm, &username, &password);
 }
-void signUp(customer *cstm)
+void signUp(customer *cstm, bool &sessionOn)
 {
     std::string fname;
     std::string lname;
@@ -46,9 +46,9 @@ void signUp(customer *cstm)
     std::cin>>password;
     std::cout << "5. Date of birth: >>";
     std::cin>>dob;
-    cstm->signUp(&username, &password, &fname, &lname, &dob);
+    sessionOn = cstm->signUp(*cstm, &username, &password, &fname, &lname, &dob);
 }
-void menu(int &choice, bool sessionOn)
+void menu(int &choice, const bool sessionOn)
 {
     
     std::cout << "Choose from the menu\n";
@@ -78,7 +78,7 @@ void rentCar(int &key)
 }
 void editProfile(customer *cstm)
 {
-    std::string fname = "";
+    std::string fname;
     std::string lname;
     std::string username;
     std::string password;
@@ -128,7 +128,7 @@ int main(int argc, const char * argv[]) {
     car c;
     std::cout << "Choose from options\n\n";
     
-    while(cg==NULL || (cg->getFirstName()=="default" && (choice== 1 || choice == 2)))
+    while(cg==NULL || (!sessionOn && (choice== 1 || choice == 2)))
     {
         std::cout << "1. Login \n2. Register\n3. Continue as a guest\n>>";
         std::cin>>choice;
@@ -137,12 +137,12 @@ int main(int argc, const char * argv[]) {
             case 1:
                 customerObj = 1;
                 cg = cstmF.getCustomer(customerObj);
-                login(cg);
+                login(cg, sessionOn);
                 break;
             case 2:
                 customerObj = 1;
                 cg = cstmF.getCustomer(customerObj);
-                signUp(cg);
+                signUp(cg, sessionOn);
                 break;
             default:
                 customerObj = 2;
@@ -152,8 +152,6 @@ int main(int argc, const char * argv[]) {
     }
     std::vector<car> searchV{};
     auto list = c.getCars();
-    if(cg->getLastName() != "default")
-        sessionOn = true;
     menu(choice, sessionOn);
     while(!isApplicationKilled)
     {
