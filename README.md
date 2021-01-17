@@ -8,4 +8,4 @@ This application will allow people to register and login to rent cars. However, 
 
 the following is a flowchart explainging the 
 
-![alt text](https://github.com/muhizia/rent-cars/tree/main/images/uml.png?raw=true)
+![alt text](https://github.com/muhizia/rent-cars/tree/main/images/uml.png)
