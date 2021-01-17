@@ -8,4 +8,4 @@ This application will allow people to register and login to rent cars. However, 
 
 The following is a flowchart explainging relationship of classes.
 
-![Test image 1](https://github.com/muhizia/rent-cars/tree/main/images/uml.png?raw=true)
+![Test image 1](https://github.com/muhizia/rent-cars/blob/main/images/uml.png?raw=true)
