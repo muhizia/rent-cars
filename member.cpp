@@ -130,7 +130,10 @@ bool member::isExists(std::string *username)
     fin.close();
     return false;
 }
-
+void member::calcPayment(std::vector<car> &cars)
+{
+    customer::calcPayment(cars);
+}
 std::string member::toString()
 {
     return customer::getFirstName() + " " + customer::getLastName();

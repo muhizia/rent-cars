@@ -11,6 +11,7 @@
 #include <string>
 #include <iostream>
 #include "car.hpp"
+#include "payment.hpp"
 
 const std::string FNAME = "_default";
 const std::string LNAME = "_default";
@@ -25,14 +26,14 @@ private:
     int customer_id;
     std::string dof;
     std::vector<car> crs;
+    payment bill;
 public:
-    customer():firstName(FNAME), lastName(LNAME), customer_id(ID){};
-    customer(std::string f, std::string l, int id): firstName(f), lastName(l), customer_id(id){};
+    customer(): bill(), firstName(FNAME), lastName(LNAME), customer_id(ID){};
+    customer(std::string f, std::string l, int id): bill(), firstName(f), lastName(l), customer_id(id){};
     virtual ~customer();
     
     virtual bool login(customer &user, const std::string *username, const std::string *password)
     {
-        std::cout<< "hello--------------------------\n";
         return false;
     }
     virtual bool signUp(customer &user, std::string *username, std::string *password, std::string *fname, std::string *lname, std::string *dof){return false;}
@@ -44,6 +45,8 @@ public:
     virtual std::vector<car>* getRentedCars();
     virtual void getRentedCars(std::vector<car> &, int);
     virtual void rentCar(car c);
+    virtual void calcPayment(std::vector<car> &car);
+    
     virtual std::string toString()=0;
     
     /* getters **/

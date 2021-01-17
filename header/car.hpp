@@ -47,6 +47,24 @@ public:
                      std::string _carPlateNo,
                      double _carPrice);
     void editcar(const car & c);
+    /* getters and setters **/
+    void setPrice(double price);
+    /*
+    void setCarMake;
+    void std::string _carType;
+    void std::string _carModel;
+    void std::string _carColour;
+    void std::string _carPlateNo;
+     */
+    
+    double getPrice();
+    
+    std::string getCarMake();
+    std::string getCarType();
+    std::string getCarModel();
+    std::string getCarColour();
+    std::string getCarPlateNo();
+    
     std::string toString();
 };
 

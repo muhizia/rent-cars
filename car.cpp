@@ -88,3 +88,35 @@ std::string car::toString()
     return "Car make = " + _carMake + " Car type = " + _carType + " Car model = " + _carModel + " Car colour = " + _carColour + " Car plate = " + _carPlateNo + " Car price = " + std::to_string (_carPrice);
 }
 car::~car(){}
+
+/* getters and setters **/
+
+void car::setPrice(double price)
+{
+    _carPrice = price;
+}
+
+double car::getPrice()
+{
+    return _carPrice;
+}
+std::string car::getCarMake()
+{
+    return _carMake;
+}
+std::string car::getCarType()
+{
+    return _carType;
+}
+std::string car::getCarModel()
+{
+    return _carModel;
+}
+std::string car::getCarColour()
+{
+    return _carMake;
+}
+std::string car::getCarPlateNo()
+{
+    return _carPlateNo;
+}
