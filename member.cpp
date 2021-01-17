@@ -130,9 +130,9 @@ bool member::isExists(std::string *username)
     fin.close();
     return false;
 }
-void member::calcPayment(std::vector<car> &cars)
+void member::calcAmount(std::vector<car> &cars)
 {
-    customer::calcPayment(cars);
+    customer::calcAmount(cars);
 }
 std::string member::toString()
 {

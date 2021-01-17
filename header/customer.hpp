@@ -45,7 +45,7 @@ public:
     virtual std::vector<car>* getRentedCars();
     virtual void getRentedCars(std::vector<car> &, int);
     virtual void rentCar(car c);
-    virtual void calcPayment(std::vector<car> &car);
+    virtual void calcAmount(std::vector<car> &car);
     
     virtual std::string toString()=0;
     

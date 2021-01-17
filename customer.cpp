@@ -17,7 +17,7 @@ void customer::getRentedCars(std::vector<car> &cars, int customer_id){}
 void customer::rentCar(car c){
     crs.push_back(c);
 }
-void customer::calcPayment(std::vector<car> &car)
+void customer::calcAmount(std::vector<car> &car)
 {
     bill.calcPrice(car);
 }

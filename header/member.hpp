@@ -28,7 +28,7 @@ public:
     std::vector<car>* getRentedCars();
     void getRentedCars(std::vector<car> &, int);
     void rentCar(car c);
-    void calcPayment(std::vector<car> &);
+    void calcAmount(std::vector<car> &);
     std::string toString();
 };
 
