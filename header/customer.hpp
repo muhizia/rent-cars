@@ -44,9 +44,8 @@ public:
     
     virtual std::vector<car>* getRentedCars();
     virtual void getRentedCars(std::vector<car> &, int);
-    virtual void rentCar(car c);
-    virtual void calcAmount(std::vector<car> &car);
-    
+    virtual void chooseCarRent(car c);
+    virtual void printBill();
     virtual std::string toString()=0;
     
     /* getters **/

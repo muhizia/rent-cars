@@ -21,9 +21,9 @@ void member::getRentedCars(std::vector<car> &cars, int customer_id)
     else
         cars = {};
 }
-void member::rentCar(car c)
+void member::chooseCarRent(car c)
 {
-    customer::rentCar(c);
+    customer::chooseCarRent(c);
 }
 bool member::login(customer &user, const std::string *username, const std::string *password)
 {
@@ -130,9 +130,12 @@ bool member::isExists(std::string *username)
     fin.close();
     return false;
 }
-void member::calcAmount(std::vector<car> &cars)
+void member::printBill()
 {
-    customer::calcAmount(cars);
+    if(customer::getRentedCars()->size()>0)
+    {
+        customer::printBill();
+    }
 }
 std::string member::toString()
 {

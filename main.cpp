@@ -1,9 +1,9 @@
-//
-//  main.cpp
-//  CarRent
-//
-//  Created by Muhizi Aristide on 08/01/2021.
-//
+/*
+*  main.cpp
+*  CarRent
+*
+*  Created by Muhizi Aristide on 08/01/2021.
+*/
 
 #include <iostream>
 #include "header/customer.hpp"
@@ -56,7 +56,7 @@ void menu(int &choice, const bool sessionOn)
     std::cout << "\n2. Search cars: ";
     if(sessionOn)
     {
-        std::cout << "\n3. Rented cars: ";
+        std::cout << "\n3. Choosen cars: ";
         std::cout << "\n4. View profile: ";
         std::cout << "\n5. Edit profile: ";
         std::cout << "\n6. Logout: \n";
@@ -71,10 +71,14 @@ void search(std::vector<car>& list, std::vector<car>& sch, car& c)
     std::cin>>key;
     sch = c.searchCar(list, key);
 }
-void rentCar(int &key)
+void rentOption(int &choice)
 {
+    std::cout << "Choose from the menu\n";
+    std::cout << "\n1. Pay for cars: ";
+    std::cout << "\n2. Edit list ";
+    std::cout << "\n3. Remove list ";
     std::cout << ">>";
-    std::cin>>key;
+    std::cin>>choice;
 }
 void editProfile(customer *cstm)
 {
@@ -102,7 +106,7 @@ int chooseCar(std::vector<car> & cars, customer *cstm, int &choice)
     std::cin>>choice;
     if(choice <= 0 && choice > cars.size())
         return 0;
-    cstm -> rentCar(cars.at(choice - 1));
+    cstm -> chooseCarRent(cars.at(choice - 1));
     return  1;
 }
 void viewRentedCar(customer *cstm, car &c)
@@ -113,6 +117,10 @@ void viewRentedCar(customer *cstm, car &c)
 void viewProfile(customer *cstm)
 {
     cstm->viewProfile(*cstm);
+}
+void rentCar(customer *cstm)
+{
+    cstm->printBill();
 }
 void logout(bool &sessionKilled)
 {
@@ -176,6 +184,15 @@ int main(int argc, const char * argv[]) {
         {
             //View rented cars
             viewRentedCar(cg, c);
+            rentOption(choice);
+            if(choice == 1)
+            {
+                rentCar(cg);
+            }
+            else if(choice == 2)
+            {
+                
+            }
         }
         else if(choice == 4) //view profile
         {
@@ -185,7 +202,6 @@ int main(int argc, const char * argv[]) {
         {
             editProfile(cg);
         }
-//        rentCar(choice);
         std::cout<<"----------------------------------------------\n";
         menu(choice, sessionOn);
     }

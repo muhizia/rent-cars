@@ -14,12 +14,15 @@ std::vector<car> *customer::getRentedCars()
     return &crs;
 }
 void customer::getRentedCars(std::vector<car> &cars, int customer_id){}
-void customer::rentCar(car c){
+void customer::chooseCarRent(car c){
     crs.push_back(c);
 }
-void customer::calcAmount(std::vector<car> &car)
+void customer::printBill()
 {
-    bill.calcPrice(car);
+    if(crs.size()>0)
+    {
+        bill.printBill(crs);
+    }
 }
 /* getters **/
 std::string customer::getFirstName() const

@@ -17,9 +17,6 @@ class guest: public customer
 public:
     guest() : customer(){};
     ~guest();
-//    void viewCar();
-//    void searchCar();
-//    void rentCar();
     std::string toString();
 };
 #endif /* Guest_hpp */

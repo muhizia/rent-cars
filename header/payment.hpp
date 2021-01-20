@@ -16,16 +16,16 @@
 class payment
 {
 private:
-    float _price;
+    float _amount;
     std::string _timePaid;
 public:
-    payment(float price =  0.0): _price(price), _timePaid(__TIME__){}
+    payment(float amount =  0.0): _amount(amount), _timePaid(__TIME__){}
     void calcPrice(std::vector<car> &);
-    
+    void printBill(std::vector<car> &);
     /* getters and setters **/
-    float getPrice() const;
-    void setPrice(float);
-    
+    float getAmount() const;
+    void setAmount(float);
+    std::string getTimePaid();
     std::string toString();
 };
 #endif /* payment_hpp */

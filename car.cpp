@@ -91,12 +91,12 @@ car::~car(){}
 
 /* getters and setters **/
 
-void car::setPrice(double price)
+void car::setPrice(float price)
 {
     _carPrice = price;
 }
 
-double car::getPrice()
+float car::getPrice()
 {
     return _carPrice;
 }

@@ -16,9 +16,6 @@ public:
     member(): customer(){};
     member(std::string f, std::string l, int id) : customer(f,l, id){};
     ~member();
-//    void viewCar();
-//    void searchCar();
-//    void rentCar();
     bool login(customer &user, const std::string *, const std::string *);
     bool signUp(customer &user, std::string *, std::string *, std::string *, std::string *, std::string *);
     bool isExists(std::string *);
@@ -27,8 +24,8 @@ public:
     void viewProfile(customer &);
     std::vector<car>* getRentedCars();
     void getRentedCars(std::vector<car> &, int);
-    void rentCar(car c);
-    void calcAmount(std::vector<car> &);
+    void chooseCarRent(car c);
+    void printBill();
     std::string toString();
 };
 

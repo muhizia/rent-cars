@@ -12,7 +12,7 @@
 #include <vector>
 
 const std::string _default = "_default";
-const double _dp = 0;
+const float _dp = 0.0;
 class car
 {
 private:
@@ -21,14 +21,14 @@ private:
     std::string _carModel;
     std::string _carColour;
     std::string _carPlateNo;
-    double _carPrice;
+    float _carPrice;
     
 public:
     car(): _carMake(_default), _carType(_default), _carModel(_default), _carColour(_default), _carPlateNo(_default), _carPrice(_dp){}
-    car(std::vector<std::string> cr):_carMake(cr.at(1)), _carType(cr.at(2)), _carModel(cr.at(3)), _carColour(cr.at(4)), _carPlateNo(cr.at(5)){
+    car(std::vector<std::string> &cr):_carMake(cr.at(1)), _carType(cr.at(2)), _carModel(cr.at(3)), _carColour(cr.at(4)), _carPlateNo(cr.at(5)){
         _carPrice = atof(cr.at(6).c_str());
     }
-    car(std::string cM, std::string cT, std::string cMd, std::string cC, std::string cP, double cPr):_carMake(cM), _carType(cT), _carModel(cMd), _carColour(cC), _carPlateNo(cP), _carPrice(cPr){}
+    car(std::string &cM, std::string &cT, std::string &cMd, std::string &cC, std::string &cP, float &cPr):_carMake(cM), _carType(cT), _carModel(cMd), _carColour(cC), _carPlateNo(cP), _carPrice(cPr){}
     ~car();
     car getCar(const std::vector<car> &, const std::string &);
     std::vector<car> getCars();
@@ -45,19 +45,12 @@ public:
                      std::string _carModel,
                      std::string _carColour,
                      std::string _carPlateNo,
-                     double _carPrice);
+                     float _carPrice);
     void editcar(const car & c);
     /* getters and setters **/
-    void setPrice(double price);
-    /*
-    void setCarMake;
-    void std::string _carType;
-    void std::string _carModel;
-    void std::string _carColour;
-    void std::string _carPlateNo;
-     */
+    void setPrice(float price);
     
-    double getPrice();
+    float getPrice();
     
     std::string getCarMake();
     std::string getCarType();

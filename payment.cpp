@@ -14,15 +14,29 @@ void payment::calcPrice(std::vector<car> &cars)
     {
         price += car.getPrice();
     }
-    _price = price;
+    _amount = price;
 }
-
-float payment::getPrice() const
+void payment::printBill(std::vector<car> &cars)
 {
-    return _price;
+    payment::calcPrice(cars);
+    std::cout<<"The bill for the paid car\n";
+    std::cout<< getTimePaid() << std::endl;
+    std::cout<<std::endl << "Plate Number \t\t\tPrice" <<std::endl;
+    for(auto car : cars)
+    {
+        std::cout<< car.getCarPlateNo() <<"\t\t\t" <<car.getPrice()<<std::endl;
+    }
+    std::cout<< "The total " << "\t\t\t" << getAmount() <<std::endl;
 }
-
-void payment::setPrice(float price)
+float payment::getAmount() const
 {
-    _price = price;
+    return _amount;
+}
+std::string payment::getTimePaid()
+{
+    return _timePaid;
+}
+void payment::setAmount(float price)
+{
+    _amount = price;
 }
