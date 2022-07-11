@@ -1,5 +1,6 @@
 # rent-cars
--- This is the project was created by @Aristide Muhizi the car rental system using c++ programming language.
+-- This is the project was created by @Aristide Muhizi
+-- The car rental system using c++ programming language.
 
 ## introduction
 This application will allow people to register and login in order to rent cars. However, the application allows guest (no login) users also to display available cars details and also search from available cars. These guest users are not allowed to rent cars unless they register or login with existing account.
