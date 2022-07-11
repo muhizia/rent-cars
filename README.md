@@ -1,5 +1,5 @@
 # rent-cars
--- This is the project was created by @Aristide Muhizi
+-- This is the project was created by @Aristide Muhizi<br/>
 -- The car rental system using c++ programming language.
 
 ## introduction
